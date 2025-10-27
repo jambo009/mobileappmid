@@ -1,4 +1,4 @@
-package com.example.w03.ui.theme
+package com.w04profile.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

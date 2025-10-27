@@ -21,7 +21,8 @@ dependencyResolutionManagement {
 
 rootProject.name = "My Application"
 include(":app")
-include(":w03")
 include(":w03kakaoemail")
 include(":w03myapp")
-include(":w04")
+include(":w03")
+include(":w04keypad")
+include(":w04profile")

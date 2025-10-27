@@ -1,4 +1,4 @@
-package com.example.w03kakaoemail.ui.theme
+package com.w04profile.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
