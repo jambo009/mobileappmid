@@ -51,7 +51,7 @@ Simple Grid: Jetpack Compose 기반 상태 관리 실습 보고서
 <img width="1083" height="348" alt="image" src="https://github.com/user-attachments/assets/ab1806fc-0aee-4cd6-aedc-95b720831450" />
 
 
-🎨 UI 화면 이미지 (가정)
+UI 화면 이미지
 
 이 섹션에는 앱의 두 가지 주요 상태를 시각적으로 보여주는 이미지를 삽입하는 것이 가장 효과적입니다.
 
@@ -61,8 +61,14 @@ Simple Grid: Jetpack Compose 기반 상태 관리 실습 보고서
 
 하단 버튼: 초록색(PrimaryColor)으로 '상호작용 시작 (Start)' 텍스트가 표시됩니다.
 
+<img width="372" height="676" alt="image" src="https://github.com/user-attachments/assets/fdc7076e-8bd3-4164-8ea0-9bf5e99a79ff" />
+
+
 활성화 상태 이미지 (종료 버튼):
 
 설명: 그리드 셀 중 몇 개가 클릭되어 무작위의 밝은 색상(청록, 빨강, 노랑 등)으로 변경된 상태입니다. 이는 앱의 핵심 기능인 동적 상호작용이 활성화되었음을 시연합니다.
 
 하단 버튼: 빨간색(AccentColor)으로 '상호작용 종료 (Stop)' 텍스트가 표시됩니다.
+
+<img width="389" height="665" alt="image" src="https://github.com/user-attachments/assets/9d1990dc-4e7b-4d38-a42a-46970e365e7d" />
+
