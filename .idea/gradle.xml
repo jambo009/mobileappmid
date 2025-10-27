@@ -13,9 +13,13 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/w03" />
             <option value="$PROJECT_DIR$/w03kakaoemail" />
-            <option value="$PROJECT_DIR$/w03myapp" />
+            <option value="$PROJECT_DIR$/w04grid" />
             <option value="$PROJECT_DIR$/w04keypad" />
+            <option value="$PROJECT_DIR$/w04overalpped" />
             <option value="$PROJECT_DIR$/w04profile" />
+            <option value="$PROJECT_DIR$/w05touch" />
+            <option value="$PROJECT_DIR$/w5counter" />
+            <option value="$PROJECT_DIR$/w5stopwatch" />
           </set>
         </option>
       </GradleProjectSettings>

@@ -22,7 +22,11 @@ dependencyResolutionManagement {
 rootProject.name = "My Application"
 include(":app")
 include(":w03kakaoemail")
-include(":w03myapp")
 include(":w03")
 include(":w04keypad")
 include(":w04profile")
+include(":w04grid")
+include(":w04overalpped")
+include(":w5counter")
+include(":w5stopwatch")
+include(":w05touch")
