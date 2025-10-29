@@ -9,16 +9,21 @@
 W03: Compose의 기본 구조 및 데이터 바인딩 
 
 
-W03composecoffee
-
-
-
+🧩 W03: Compose의 기본 구조 및 데이터 바인딩
+☕ ComposeCoffee
 <img width="362" height="648" alt="image" src="https://github.com/user-attachments/assets/ccfde846-bd69-400a-b263-60e1fff26cd4" />
 
+구현 내용
 
-"**Column, Row, Spacer**를 활용하여 UI 요소를 수직 및 수평으로 정밀하게 정렬했습니다. 특히, Modifier.padding을 사용하여 **디자인 시스템 기반의 간격(Spacing)**을 부여하고, Button Composable의 onClick 핸들러를 준비하여 이벤트 처리를 습니다.","기본적인 레이아웃 Composables에 대한 숙련도를 확보하고, Modifier를 활용한 레이아웃 구성 능력을 입증했습니다."
+Column, Row, Spacer를 활용하여 UI 요소를 세밀하게 정렬
 
+Modifier.padding을 통해 디자인 시스템 기반의 간격(Spacing) 설정
 
+Button Composable의 onClick 핸들러를 준비하여 이벤트 처리 구조 설계
+
+성과 및 학습 포인트
+
+기본 레이아웃 컴포저블(Column, Row 등)을 자유자재로 조합하고, Modifier를 통해 일관된 UI 구조를 구성하는 능력을 확보했습니다.
 
 W03kakaoemail
 
