@@ -44,8 +44,8 @@ W04overalpped
 
 
 
-<img width="361" height="643" alt="image" src="https://github.com/user-attachments/assets/51eeeeec-0bd3-4e16-8b58-
-a23a669f9803" />
+<img width="355" height="640" alt="image" src="https://github.com/user-attachments/assets/682b7663-feea-4868-b243-20a08cb0c7d1" />
+
 
 
 
@@ -56,6 +56,39 @@ W04profile
 <img width="357" height="82" alt="image" src="https://github.com/user-attachments/assets/ec0f374d-f26a-4fda-a63b-1a0c92d2eceb" />
 
 
+W05counter
+
+
+
+<img width="356" height="641" alt="image" src="https://github.com/user-attachments/assets/0098a337-766b-4a57-8f8b-34f9883a23dd" />
+
+
+
+W05stopwatch
+
+
+<img width="360" height="640" alt="image" src="https://github.com/user-attachments/assets/97e5e0cc-dd88-45c2-99ad-5a386964b662" />
+
+
+
+W05touch
+
+
+<img width="357" height="640" alt="image" src="https://github.com/user-attachments/assets/f3fbb693-c6f4-406a-94e2-0b4933a76684" />
+<img width="359" height="646" alt="image" src="https://github.com/user-attachments/assets/afce3bd3-ab56-462a-81ac-1542595e08a1" />
+
+
+W06bubblegame
+
+
+
+<img width="354" height="636" alt="image" src="https://github.com/user-attachments/assets/63c40633-512f-47ca-83bd-5b734633ecb4" />
+
+
+W07stopwatchgame
+
+
+<img width="360" height="642" alt="image" src="https://github.com/user-attachments/assets/dc6ec1fe-9ab2-477d-b56e-c7c6981c5c08" />
 
 
 
