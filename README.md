@@ -177,7 +177,7 @@ Jetpack Compose를 처음 다루면서 기존 XML 방식과의 차이를 많이 
 이번 실습을 통해 Compose의 핵심 철학인  
 **“상태와 UI가 함께 움직이는 선언형 프로그래밍”**의 장점을 확실히 체험함.
 
-# Simple Grid: Jetpack Compose 실습 
+# Simple Grid(myapp:자신만의 앱): Jetpack Compose 실습 
 
 ## 프로젝트 개요
 
