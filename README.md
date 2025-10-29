@@ -15,7 +15,6 @@ Compose의 주요 기능들을 직접 구현하며 학습한 내용을 기록했
 
 ---
 
-성민준
 
 
 # 📱 Jetpack Compose UI 실습 리포트
