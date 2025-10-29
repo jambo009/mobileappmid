@@ -15,7 +15,10 @@ W03composecoffee
 
 <img width="362" height="648" alt="image" src="https://github.com/user-attachments/assets/ccfde846-bd69-400a-b263-60e1fff26cd4" />
 
-☕ 정적 UI 구조화: Column을 최상위 레이아웃으로 사용하여 요소를 수직으로 배치하고, 버튼 영역에서는 Row를 사용하여 수평 정렬을 구현했습니다. Image Composable을 사용하고, **Modifier.border**를 통해 이미지에 테두리를 추가하여 시각적 강조를 주었습니다.
+
+"**Column, Row, Spacer**를 활용하여 UI 요소를 수직 및 수평으로 정밀하게 정렬했습니다. 특히, Modifier.padding을 사용하여 **디자인 시스템 기반의 간격(Spacing)**을 부여하고, Button Composable의 onClick 핸들러를 준비하여 이벤트 처리를 습니다.","기본적인 레이아웃 Composables에 대한 숙련도를 확보하고, Modifier를 활용한 레이아웃 구성 능력을 입증했습니다."
+
+
 
 W03kakaoemail
 
@@ -23,7 +26,8 @@ W03kakaoemail
 
 <img width="354" height="639" alt="image" src="https://github.com/user-attachments/assets/8ece48ea-1cac-416e-a660-60e89ed04630" />
 
-📧 사용자 입력 및 상태 초기 관리: **OutlinedTextField**와 같은 입력 필드를 사용하여 사용자로부터 텍스트를 받습니다. 입력된 텍스트는 val email by remember { mutableStateOf("") } 형태의 상태(State) 변수에 저장되며, 이 상태가 변경될 때마다 UI(입력 필드 값)가 갱신됩니다. 이는 Compose의 반응성(Reactivity)의 기초입니다.
+"TextField 또는 **OutlinedTextField**를 사용하여 사용자 입력 필드를 구현했습니다. 핵심은 **remember { mutableStateOf("""") }**를 사용한 상태 변수(State Variable) 선언입니다. 사용자가 텍스트를 입력할 때마다 상태가 갱신되고, UI는 이 상태를 **반영(Observe)**하여 변경됩니다.",Jetpack Compose의 가장 중요한 원리인 '상태 기반 UI 갱신' 메커니즘을 실제 입력 컴포넌트에 적용했습니다.
+
 
 W04: 복합 레이아웃 구성 및 커스터마이징
 
@@ -32,10 +36,11 @@ W04grid
 
 
 <img width="358" height="652" alt="image" src="https://github.com/user-attachments/assets/4c36d6d7-9dc6-461b-b4cc-e7c0a1599cb4" />
-
-🖼️ 대규모 데이터 표시: LazyVerticalGrid 또는 LazyColumn과 Row의 조합을 활용하여 **스크롤 가능한 격자형 뷰(Gallery View)**를 구현했습니다. 특히 Lazy Composables은 화면에 보이는 항목만 로드하여 성능 최적화를 달성하는 핵심 기법입니다.
-
 <img width="352" height="635" alt="image" src="https://github.com/user-attachments/assets/d53dec53-4864-4d0d-9695-7b8513f3aef6" />
+
+
+LazyVerticalGrid (또는 LazyColumn과 Row 조합)을 사용하여 수백 개의 이미지를 효율적으로 표시하는 스크롤 가능 뷰를 구현했습니다. Lazy 접두사가 붙은 Composables은 화면에 보이는 요소만 렌더링하여 앱의 메모리 사용량과 성능을 최적화하는 데 필수적인 기술입니다.	대규모 데이터 셋을 다루는 데 필요한 성능 최적화 레이아웃(Lazy Composables)의 사용법을 완벽히 숙지했습니다.\
+
 
 W04keypad
 
@@ -43,7 +48,7 @@ W04keypad
 
 <img width="357" height="648" alt="image" src="https://github.com/user-attachments/assets/133506f3-0d6f-491f-b836-ad4eb07d6a35" />
 
-🔢 비례 레이아웃(Weighted Layout): 키패드의 버튼들을 Row 내에 배치하고, 각 버튼에 **Modifier.weight(1f)**를 적용하여 화면 너비 내에서 버튼들이 균등한 너비를 갖도록 비례적으로 크기를 조절했습니다. 이는 다양한 화면 크기에 대응하는 반응형 UI 설계의 기본입니다.
+키패드 버튼들을 Row와 Column의 계층 구조로 배치하고, **Modifier.weight(float)**를 사용하여 각 버튼이 가로 공간을 균등하게 차지하도록 비례 배분했습니다. 이는 다양한 해상도의 기기에서 일관된 비율의 UI를 제공하는 반응형 디자인의 핵심입니다.	Modifier.weight를 통한 유연한 레이아웃(Flexible Layout) 설계를 통해 다차원 배열 형태의 UI를 정확하게 구현했습니다.
 
 W04overalpped
 
@@ -51,7 +56,7 @@ W04overalpped
 
 <img width="355" height="640" alt="image" src="https://github.com/user-attachments/assets/682b7663-feea-4868-b243-20a08cb0c7d1" />
 
-疊 Box 레이아웃 및 오프셋: Box Composable을 사용하여 여러 프로필 이미지(Image)들을 서로 겹쳐서 배치했습니다. 각 이미지는 **Modifier.offset(x = ..., y = ...)**를 사용하여 기준 위치로부터 상대적으로 이동시켜 겹침 효과를 만들어냈습니다.
+Box Composable을 사용하여 여러 UI 요소(예: Image)를 Z축(깊이) 방향으로 겹쳐 보이도록 구현했습니다. 개별 요소의 위치는 **Modifier.offset(dp)**를 사용하여 세밀하게 조정하여 시각적인 깊이감을 연출했습니다.**Box 레이아웃과 Modifier.offset**을 활용하여 겹침, 배경/전경 배치 등 2.5D 레이아웃 효과를 생성했습니다.
 
 W04profile
 
@@ -59,7 +64,7 @@ W04profile
 
 <img width="357" height="82" alt="image" src="https://github.com/user-attachments/assets/ec0f374d-f26a-4fda-a63b-1a0c92d2eceb" />
 
-👤 재사용 가능한 컴포넌트: Card 또는 Surface 내에 Row와 Column을 조합하여 명함 형태의 작은 커스터마이징된 Composable을 생성했습니다. 이는 앱 전체에서 동일한 UI 패턴을 재사용하는 데 유용합니다.
+
 
 W05: 고급 상태 관리 및 상호 작용
 
@@ -71,14 +76,14 @@ W05counter
 
 <img width="356" height="641" alt="image" src="https://github.com/user-attachments/assets/0098a337-766b-4a57-8f8b-34f9883a23dd" />
 
-🎯 버튼 이벤트 및 상태 변경: 버튼의 onClick 람다 내에서 카운터 상태 변수를 직접 변경했습니다. 이 실습은 **단방향 데이터 흐름 (Unidirectional Data Flow)**의 가장 단순한 형태를 보여줍니다.
+**mutableStateOf**를 활용하여 카운터 값을 상태로 정의하고, 버튼 클릭 이벤트 발생 시 상태 변경을 통해 UI(화면의 숫자)가 즉각적으로 갱신되는 단방향 데이터 흐름(Unidirectional Data Flow) 원리를 구현했습니다.	remember와 mutableStateOf를 사용하여 Composable의 수명 주기(Lifecycle) 동안 상태를 유지하고, 상태 변화에 반응하는 반응형 프로그래밍의 기본을 완성했습니다.
 
 W05stopwatch
 
 
 <img width="360" height="640" alt="image" src="https://github.com/user-attachments/assets/97e5e0cc-dd88-45c2-99ad-5a386964b662" />
 
-⏱️ 비동기 타이머 로직: **LaunchedEffect**와 withFrameNanos 또는 **Kotlin Coroutines (delay)**를 사용하여 메인 스레드를 막지 않으면서 정기적으로 UI를 업데이트하는 비동기 타이머 기능을 구현했습니다. 시간 계산 로직과 isRunning 상태 변수를 결합하여 복잡한 상태를 관리합니다.
+Kotlin Coroutines의 **LaunchedEffect**와 delay 함수를 사용하여 메인 UI 스레드를 막지 않는 비동기 타이머 로직을 구현했습니다. isRunning: Boolean 상태를 추가하여 스톱워치의 시작/정지 상태를 제어하는 복잡한 비동기 상태 관리를 수행했습니다.	코루틴을 활용한 비동기 프로그래밍 능력을 입증했으며, 앱의 **응답성(Responsiveness)**을 해치지 않는 타이머/애니메이션 구현 기법을 습득했습니다.
 
 W05touch
 
@@ -86,8 +91,7 @@ W05touch
 <img width="357" height="640" alt="image" src="https://github.com/user-attachments/assets/f3fbb693-c6f4-406a-94e2-0b4933a76684" />
 <img width="359" height="646" alt="image" src="https://github.com/user-attachments/assets/afce3bd3-ab56-462a-81ac-1542595e08a1" />
 
-👆 터치 제스처 처리: Modifier.pointerInput 또는 **detectDragGestures**와 같은 모디파이어를 사용하여 화면에 발생하는 드래그(Drag), 탭(Tap) 이벤트를 감지했습니다. 터치 좌표를 받아 캔버스에 선을 그리거나(Canvas Composable 사용 예상), UI 요소를 이동시키는 실시간 상호 작용을 구현했습니다.
-
+**Modifier.pointerInput**을 사용하여 화면의 **터치 제스처(Drag, Tap)**를 감지하고, 해당 터치 좌표를 실시간으로 추적하여 Canvas Composable에 선(Line)을 그리는 로직을 구현했습니다. 색상 피커 버튼은 별도의 상태 변수로 현재 선택된 색상을 관리했습니다.로우 레벨(Low-level) 터치 이벤트를 처리하는 pointerInput API를 사용하여 직관적인 사용자 상호 작용(Direct Manipulation) 기능을 성공적으로 구현했습니다.
 
 W06 & W07: 애니메이션 및 게임 로직 구현
 
@@ -97,7 +101,7 @@ W06bubblegame
 
 <img width="354" height="636" alt="image" src="https://github.com/user-attachments/assets/63c40633-512f-47ca-83bd-5b734633ecb4" />
 
-🎈 게임 상태 및 애니메이션: 버블 객체의 위치(x, y), 크기, 색상을 상태로 관리하고, 랜덤 함수를 사용하여 버블을 무작위 위치에 생성했습니다. 버블을 터치했을 때(onClick 또는 pointerInput), 해당 객체를 상태 목록에서 제거하고 점수를 업데이트하는 게임 루프의 기본 로직을 구현했습니다.
+게임 플레이에 필요한 객체(버블) 모델을 정의하고, List<Bubble> 형태로 관리했습니다. 랜덤 함수를 사용하여 버블의 생성 위치와 속성을 결정하고, 터치 시 해당 버블 객체를 목록에서 **제거(Remove)**하는 방식으로 **게임 상태(Game State)**를 업데이트했습니다.	클래스/데이터 모델을 Composable의 상태와 결합하여 단순한 게임 루프를 구현하고, 사용자 입력에 따른 상태 변화를 명확하게 처리했습니다.
 
 W07stopwatchgame
 
@@ -105,7 +109,7 @@ W07stopwatchgame
 <img width="360" height="642" alt="image" src="https://github.com/user-attachments/assets/dc6ec1fe-9ab2-477d-b56e-c7c6981c5c08" />
 
 
-🏁 복합 게임 로직 및 UI 피드백: W05의 스톱워치 기능에 목표 시간(Target Time) 개념을 추가했습니다. 사용자가 버튼을 눌렀을 때의 시간 오차를 계산하고, 그에 따른 **승패 조건(Win/Lose)**을 판단하여 UI에 명확한 피드백(점수, 메시지)을 제공하는 **조건적 렌더링(Conditional Rendering)**을 사용했습니다.
+W05의 스톱워치 로직을 확장하여 게임 시간 제한 및 목표 값을 설정했습니다. 게임 종료 시, 사용자가 버튼을 누른 시점과 목표 시간 간의 **시간 차이(오차)**를 계산하고, 이 오차 값에 따라 **게임 결과(Score/Message)**를 분기 처리하는 조건부 렌더링을 구현했습니다.여러 상태 변수(타이머, 목표 시간, 게임 상태)를 동시에 관리하고, 복잡한 로직의 결과를 UI에 실시간으로 반영하는 고급 상태 패턴을 성공적으로 적용했습니다.
 
 
 
