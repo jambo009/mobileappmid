@@ -240,7 +240,41 @@ Compose에서 스코프와 Modifier 활용 중요성 체득.
 
 ---
 
-## 주요 코드 (MainActivity.kt)
+UI 작동 예시
+1. 비활성화 상태
 
-```kotlin
-// 코드 생략, 이전과 동일
+<img width="357" height="637" alt="image" src="https://github.com/user-attachments/assets/bef8e4e7-425d-41dc-8367-ab770a361aaa" />
+
+
+모든 셀 회색조, 클릭 불가
+
+버튼 초록색, '상호작용 시작'
+
+2. 활성화 상태
+
+<img width="356" height="639" alt="image" src="https://github.com/user-attachments/assets/73ba145d-c248-44c1-96ca-7c08c94e8523" />
+
+
+클릭한 셀 무작위 밝은 색 변경
+
+버튼 빨간색, '상호작용 종료'
+
+학습 포인트
+
+단일 상태로 Compose UI 효율적 제어
+
+RowScope 확장으로 안정적 레이아웃 구성
+
+단순 직관 UX 설계로 유지보수성 확보
+
+주요 구현 내용
+
+Column, Row, Spacer를 이용한 세로/가로 정렬
+
+Modifier.padding으로 일관된 여백 구성
+
+Button onClick 이벤트 처리 구조 설계
+
+핵심 학습 포인트
+
+기본 레이아웃 구성 요소 활용법 이해, Modifier로 세밀한 간격 조정 가능성 습득
