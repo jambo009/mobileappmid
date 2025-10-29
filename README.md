@@ -111,58 +111,49 @@ fun SimpleGridApp() {
 ---
 
 
-# 📱 Simple Grid myapp에 대한 소
+# 📱 Simple Grid  myapp에 대한 소개
 ### Jetpack Compose 기반 상태 관리 실습 프로젝트
 
-Simple Grid는 Jetpack Compose의 상태 관리(State Management)와 반응형 UI 구조를 이해하기 위해 만든 실습 프로젝트입니다.  
-4x4 형태의 격자를 만들고, 시작/종료 버튼 하나로 전체 상호작용을 제어하는 구조를 통해 Compose가 UI를 효율적으로 관리하는 방식을 직접 체험할 수 있습니다.
+Simple Grid는 Jetpack Compose 상태 관리와 반응형 UI 구조를 이해하기 위해 만든 실습 프로젝트다.  
+4x4 격자를 만들고 시작/종료 버튼 하나로 전체 상호작용을 제어하며 Compose의 효율적인 UI 관리를 체험할 수 있다.
 
 ---
 
 ## 🧩 프로젝트 개요  
 
-이 프로젝트의 목표는 단순한 기능 구현이 아니라, 앱의 중심은 상태(State)이며 UI는 그 상태를 반영한다는 Compose의 철학을 실제 코드로 체화하는 것입니다.  
+앱의 중심은 상태(State)이며 UI는 그 상태를 반영한다는 Compose 철학을 코드로 체화하는 것이 목표다.
 
 핵심 포인트:  
-- 4x4 격자를 만들고 시작/종료 버튼으로 전체 UI 동작 제어  
-- Compose의 단방향 데이터 흐름(Unidirectional Data Flow) 실습  
-- 상태(State)를 중앙에서 관리하여 코드 구조 단순화
+- 4x4 격자 구현 + 시작/종료 버튼으로 전체 UI 제어  
+- Compose 단방향 데이터 흐름(Unidirectional Data Flow) 실습  
+- 상태(State)를 중앙에서 관리해 코드 구조 단순화
 
 ---
 
 ## ⚙️ 핵심 구현 포인트  
 
 ### 1️⃣ 단일 상태로 전체 UI 통제  
-`isInteractionEnabled`라는 단일 `mutableStateOf` 변수로 앱 전체 활성화 여부를 관리했습니다.  
-
+`isInteractionEnabled`라는 단일 `mutableStateOf` 변수로 전체 활성화 여부를 관리했다.  
 - 모든 셀 클릭 가능 여부를 이 변수로 제어  
-- 하단 버튼은 상태에 따라 텍스트(Start ↔ Stop)와 색상(초록 ↔ 빨강)을 동시에 변경  
-
-이 방식 덕분에 버튼 하나로 전체 UI가 즉시 반영되며, Compose의 단방향 데이터 흐름을 자연스럽게 이해할 수 있었습니다.
+- 버튼은 상태에 따라 텍스트(Start ↔ Stop)와 색상(초록 ↔ 빨강) 동시에 변경
 
 ---
 
 ### 2️⃣ 균일한 그리드 구성과 Modifier 안정성  
-화면 크기나 비율이 달라도 항상 동일한 크기의 4x4 셀을 유지하도록 구현했습니다.  
-
-- Column과 Row를 계층적으로 배치  
-- 각 셀에 `Modifier.weight(1f)`를 적용하여 균등 비율 유지  
-- `GridCell`을 `RowScope` 확장 함수로 선언해 스코프 문제 해결  
-
-이를 통해 Modifier 작동 원리와 Compose 스코프 구조를 깊이 이해할 수 있었습니다.
+- Column과 Row 계층 배치  
+- 각 셀에 `Modifier.weight(1f)` 적용으로 균등 비율 유지  
+- `GridCell`을 `RowScope` 확장 함수로 선언해 스코프 문제 해결
 
 ---
 
-### 3️⃣ UX 중심의 실용적 설계  
-- 과도한 애니메이션 대신 안정성과 유지보수성을 우선  
+### 3️⃣ UX 중심 설계  
+- 과도한 애니메이션 없이 안정성과 유지보수성 우선  
 - 상호작용 종료 시 `Modifier.alpha(0.5f)` 적용으로 비활성 상태 시각화  
-- 버튼 하나로 ① 버튼 색상/텍스트 변경, ② 16개 셀 클릭 가능 여부 동시에 반영  
-
-이 경험을 통해 '작동하는 코드'가 '화려한 코드'보다 실용적임을 체감했습니다.
+- 버튼 하나로 버튼 색상/텍스트와 16개 셀 클릭 가능 여부 동시에 제어
 
 ---
 
-## 💻 주요 코드 스니펫
+## 💻 코드 스니펫
 
 ```kotlin
 @Composable
@@ -190,13 +181,3 @@ fun SimpleGridApp() {
     }
 }
 
-
-<img width="389" height="665" alt="image" src="https://github.com/user-attachments/assets/9d1990dc-4e7b-4d38-a42a-46970e365e7d" />
-
-🧠 배운 점
-
-UI = 상태(State)의 함수라는 개념 체감
-
-여러 컴포넌트에 흩어진 상태를 중앙에서 관리하는 것이 Compose의 단방향 데이터 흐름에서 핵심 원칙임을 이해
-
-안정적이고 유지보수 가능한 코드를 작성하는 중요성 체득
