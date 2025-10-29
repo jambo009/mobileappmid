@@ -17,7 +17,7 @@ Compose의 주요 기능들을 직접 구현하며 학습한 내용을 기록했
 
 
 
-# 📱 Jetpack Compose UI 실습 리포트
+# 📱 Jetpack Compose UI 실습
 ### Android Studio를 활용한 UI 실습  (W03 ~ W07)
 
 ---
