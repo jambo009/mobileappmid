@@ -149,28 +149,6 @@ UI와 데이터 모델을 결합하여, 사용자 입력에 따라 상태가 동
 
 ---
 
-## 🧩 코드 예시
-
-```kotlin
-@Composable
-fun CounterExample() {
-    var count by remember { mutableStateOf(0) }
-
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
-        Text(text = "$count", fontSize = 40.sp)
-        Spacer(modifier = Modifier.height(16.dp))
-        Button(onClick = { count++ }) {
-            Text("Add")
-        }
-    }
-}
-
-
-
 
 myapp(자신만의 앱)에대한소개
 
