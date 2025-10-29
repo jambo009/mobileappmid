@@ -15,169 +15,256 @@ Compose의 주요 기능들을 직접 구현하며 학습한 내용을 기록했
 
 ---
 
-## W03 · Compose 기본 구조 & 데이터 바인딩
+성민준
 
-### ☕ W03ComposeCoffee  
-<img width="362" height="648" src="https://github.com/user-attachments/assets/ccfde846-bd69-400a-b263-60e1fff26cd행 포인트  
 
-### 1️⃣ 단일 상태로 전체 UI 통제  
-
-앱 전체의 활성화 여부를 isInteractionEnabled라는 단일 mutableStateOf 변수로 관리했다.  
-
-- 모든 셀은 이 변수의 값에 따라 클릭 가능 여부가 결정된다.  
-- 하단의 버튼은 동일한 상태를 기반으로  
-  - 텍스트(Start ↔ Stop)  
-  - 색상(초록 ↔ 빨강)  
-  을 동시에 변경한다.  
-
-초기에는 각 셀의 상태를 따로 관리하려 했지만,  
-중앙에서 단일 상태로 제어하니 구조가 훨씬 단순해졌고,  
-버튼 하나로 전체 UI의 동작이 즉시 반영되는 Compose의 단방향 데이터 흐름(Unidirectional Data Flow)을 자연스럽게 이해할 수 있었다.
+# 📱 Jetpack Compose UI 실습 리포트
+### Android Studio를 활용한 UI 실습 정리 (W03 ~ W07)
+# Jetpack Compose UI Practice Report  
+### Android Studio · Kotlin · Jetpack Compose
 
 ---
 
-### 2️⃣ 균일한 그리드 구성과 Modifier 안정성  
+## W03: Compose 기본 구조 & 데이터 바인딩 이해
+## 🧭 Overview
 
-화면 크기나 비율이 달라도 항상 동일한 크기의 4x4 셀을 유지하는 정비율 그리드 레이아웃을 구현했다.  
-
-- Column과 Row를 계층적으로 배치하고  
-- 각 셀에 Modifier.weight(1f)를 부여해 균등 비율을 유지했다.  
-
-초기에는 Modifier.weight가 인식되지 않는 오류가 발생했는데,  
-이는 Composable의 스코프(Scope) 문제였다.  
-GridCell을 RowScope의 확장 함수로 선언함으로써  
-weight(1f)가 올바른 컨텍스트에서 실행되도록 해결했다.  
-
-이 과정을 통해 Modifier의 작동 원리와 Compose의 스코프 구조를 깊이 있게 이해할 수 있었다.
+Jetpack Compose를 활용한 안드로이드 UI 실습 과정을 정리한 프로젝트입니다.  
+기본적인 레이아웃 구조부터 상태 관리, 비동기 처리, 터치 이벤트, 간단한 게임 로직까지  
+Compose의 주요 기능들을 직접 구현하며 학습한 내용을 기록했습니다.
 
 ---
 
-### 3️⃣ UX 중심의 실용적 설계  
+## Week 03 · Compose 기본 구조 & 데이터 바인딩
 
-과도한 애니메이션보다는 안정성과 유지보수성을 우선시했다.  
+### ☕ ComposeCoffee  
+<img width="362" height="648" alt="image" src="https://github.com/user-attachments/assets/ccfde846-bd69-400a-b263-60e1fff26cd4" />
+<img width="362" height="648" src="https://github.com/user-attachments/assets/ccfde846-bd69-400a-b263-60e1fff26cd4" />
 
-- Box + Modifier 조합을 사용해 단순하고 명확한 구조 유지  
-- 팀 프로젝트나 후속 개발 시에도 쉽게 이해할 수 있는 코드 구조  
+**구현 내용**  
+- `Column`, `Row`, `Spacer`를 이용해 UI 요소를 세로와 가로로 정렬  
+- `Modifier.padding()`을 사용해 일정한 여백 적용  
+- `Button`의 `onClick`을 준비하여 클릭 이벤트 구조 설계  
+**주요 구현 내용**  
+- Column, Row, Spacer를 이용한 세로 및 가로 정렬  
+- Modifier.padding을 적용해 일관된 여백 구성  
+- Button의 onClick을 준비해 이벤트 처리 구조 설계  
 
-상호작용 종료 상태일 때는 단순히 클릭을 막는 대신  
-Modifier.alpha(0.5f)를 적용해 시각적으로 비활성 상태임을 표현했다.  
-이 작은 변화가 사용자에게 명확한 피드백으로 작용했다.
-
----
-
-## 🧠 기술적 요약
-
-| 항목 | 내용 |
-|------|------|
-| 언어 | Kotlin |
-| 프레임워크 | Jetpack Compose |
-| 핵심 기술 | mutableStateOf, remember, Modifier.weight, Box, RowScope |
-| UI 구조 | 4x4 Grid + Control Button |
-| 상태 흐름 | 단일 State → 전체 UI 동기 반영 |
-| UX 기능 | 클릭 활성화 시 색상 변화, 비활성화 시 투명도 변경 |
+**배운 점**  
+기본적인 레이아웃 구성 방법과 Modifier를 활용한 간격 조정 방법을 익혔습니다.  
+Compose의 기본 레이아웃 원리를 이해하는 데 도움이 되었습니다.
+**핵심 학습 포인트**  
+기본 레이아웃 구성 요소의 활용법을 익히고, Modifier로 세밀한 간격 조정이 가능함을 이해함.
 
 ---
 
-## 💻 주요 코드 스니펫
+### 💌 KakaoEmail  
+<img width="354" height="639" alt="image" src="https://github.com/user-attachments/assets/8ece48ea-1cac-416e-a660-60e89ed04630" />
+<img width="354" height="639" src="https://github.com/user-attachments/assets/8ece48ea-1cac-416e-a660-60e89ed04630" />
+
+**구현 내용**  
+- `OutlinedTextField`를 이용한 사용자 입력 필드 구현  
+- `remember { mutableStateOf("") }`로 입력 상태를 관리  
+- 입력 시 상태가 자동 갱신되어 UI에 즉시 반영  
+**주요 구현 내용**  
+- OutlinedTextField로 사용자 입력 필드 구현  
+- remember { mutableStateOf("") }로 상태(State) 관리  
+- 상태 변경 시 UI 자동 갱신  
+
+**배운 점**  
+Jetpack Compose의 핵심 개념인 **상태 기반 UI 갱신(State-driven UI)** 구조를 이해했습니다.  
+데이터 상태가 바뀌면 자동으로 화면이 변경되는 선언형 방식에 익숙해졌습니다.
+**핵심 학습 포인트**  
+데이터 상태 변화가 화면에 즉시 반영되는 Compose의 상태 기반 UI 구조를 이해함.
+
+---
+
+## W04: 복잡한 레이아웃 설계 & 구성
+## Week 04 · 복잡한 레이아웃 설계 & 모듈화
+
+### 🖼️ Grid Layout  
+<img width="358" height="652" alt="image" src="https://github.com/user-attachments/assets/4c36d6d7-9dc6-461b-b4cc-e7c0a1599cb4" />
+<img width="352" height="635" alt="image" src="https://github.com/user-attachments/assets/d53dec53-4864-4d0d-9695-7b8513f3aef6" />
+<img width="358" height="652" src="https://github.com/user-attachments/assets/4c36d6d7-9dc6-461b-b4cc-e7c0a1599cb4" />
+<img width="352" height="635" src="https://github.com/user-attachments/assets/d53dec53-4864-4d0d-9695-7b8513f3aef6" />
+
+**구현 내용**  
+- `LazyVerticalGrid`를 사용하여 여러 이미지를 스크롤 가능한 형태로 표시  
+- Lazy Composable을 통해 보이는 영역만 렌더링되어 성능 최적화  
+**주요 구현 내용**  
+- LazyVerticalGrid를 이용해 이미지 그리드 생성  
+- Lazy Composable로 필요한 요소만 렌더링하여 성능 최적화  
+
+**배운 점**  
+대량의 데이터를 효율적으로 처리할 수 있는 **Lazy 로딩 방식**의 원리를 이해했습니다.
+**핵심 학습 포인트**  
+대량 데이터를 효율적으로 표시하는 Lazy 레이아웃의 원리를 이해함.
+
+---
+
+### 🔢 Keypad Layout  
+<img width="357" height="648" alt="image" src="https://github.com/user-attachments/assets/133506f3-0d6f-491f-b836-ad4eb07d6a35" />
+<img width="357" height="648" src="https://github.com/user-attachments/assets/133506f3-0d6f-491f-b836-ad4eb07d6a35" />
+
+**구현 내용**  
+- Row와 Column을 조합하여 키패드 구조 생성  
+- `Modifier.weight()`로 각 버튼이 동일한 비율을 차지하도록 설정  
+**주요 구현 내용**  
+- Row와 Column을 조합해 키패드 구조 구성  
+- Modifier.weight로 균등 비율 배치  
+
+**배운 점**  
+다양한 해상도의 기기에서도 일관된 비율로 보이는 **반응형 UI 설계** 방법을 익혔습니다.
+**핵심 학습 포인트**  
+다양한 해상도에서도 일관된 비율을 유지하는 반응형 레이아웃 설계 능력 향상.
+
+---
+
+### 🎨 Overlapped Layout  
+<img width="355" height="640" alt="image" src="https://github.com/user-attachments/assets/682b7663-feea-4868-b243-20a08cb0c7d1" />
+<img width="355" height="640" src="https://github.com/user-attachments/assets/682b7663-feea-4868-b243-20a08cb0c7d1" />
+
+**구현 내용**  
+- `Box`를 사용해 UI 요소를 겹쳐 배치  
+- `Modifier.offset()`으로 개별 요소의 위치를 세밀하게 조정  
+**주요 구현 내용**  
+- Box를 이용한 겹침 구조 구현  
+- Modifier.offset으로 요소의 세부 위치 조정  
+
+**배운 점**  
+겹치는 UI 구성과 z축 개념을 이해하고, 입체적인 화면 구성을 구현할 수 있었습니다.
+**핵심 학습 포인트**  
+Z축 개념을 활용한 겹침 효과와 입체적인 UI 구성 방식 습득.
+
+---
+
+## W05: 상태 관리 & 실시간 상호작용
+## Week 05 · 상태 관리 & 실시간 상호작용
+
+### 🔢 Counter  
+<img width="356" height="641" alt="image" src="https://github.com/user-attachments/assets/0098a337-766b-4a57-8f8b-34f9883a23dd" />
+<img width="356" height="641" src="https://github.com/user-attachments/assets/0098a337-766b-4a57-8f8b-34f9883a23dd" />
+
+**구현 내용**  
+- `mutableStateOf`로 카운터 값을 상태로 관리  
+- 버튼 클릭 시 상태가 변경되며 UI가 자동 갱신  
+**주요 구현 내용**  
+- mutableStateOf로 카운터 값 관리  
+- 버튼 클릭 시 상태 변경 → UI 자동 업데이트  
+
+**배운 점**  
+Compose의 **단방향 데이터 흐름(Unidirectional Data Flow)** 개념을 이해했습니다.  
+상태 변화가 UI에 직접 반영되는 구조를 체험했습니다.
+**핵심 학습 포인트**  
+단방향 데이터 흐름(Unidirectional Data Flow)의 구조를 이해하고,  
+상태 변화에 따라 UI가 자동으로 갱신되는 Compose의 특징을 체험함.
+
+---
+
+### ⏱️ Stopwatch  
+<img width="360" height="640" alt="image" src="https://github.com/user-attachments/assets/97e5e0cc-dd88-45c2-99ad-5a386964b662" />
+<img width="360" height="640" src="https://github.com/user-attachments/assets/97e5e0cc-dd88-45c2-99ad-5a386964b662" />
+
+**구현 내용**  
+- `LaunchedEffect`와 `delay()`를 활용한 비동기 타이머 구현  
+- `isRunning` 상태로 시작/정지 제어  
+**주요 구현 내용**  
+- LaunchedEffect와 delay를 사용한 비동기 타이머 구현  
+- isRunning 상태로 시작/정지 제어  
+
+**배운 점**  
+Coroutine을 이용한 비동기 로직을 Compose에 적용해, UI를 멈추지 않고 동작하도록 구현했습니다.
+**핵심 학습 포인트**  
+Coroutine을 활용한 비동기 로직 적용과, UI 반응성을 유지하는 구조 학습.
+
+---
+
+### ✋ Touch & Draw  
+<img width="357" height="640" alt="image" src="https://github.com/user-attachments/assets/f3fbb693-c6f4-406a-94e2-0b4933a76684" />
+<img width="359" height="646" alt="image" src="https://github.com/user-attachments/assets/afce3bd3-ab56-462a-81ac-1542595e08a1" />
+<img width="357" height="640" src="https://github.com/user-attachments/assets/f3fbb693-c6f4-406a-94e2-0b4933a76684" />
+<img width="359" height="646" src="https://github.com/user-attachments/assets/afce3bd3-ab56-462a-81ac-1542595e08a1" />
+
+**구현 내용**  
+- `Modifier.pointerInput`으로 터치 이벤트 감지  
+- Canvas를 이용해 드래그 경로를 실시간으로 그림  
+- 색상 선택 상태를 별도 변수로 관리  
+**주요 구현 내용**  
+- Modifier.pointerInput으로 터치 이벤트 감지  
+- Canvas를 이용한 드로잉 기능 구현  
+- 현재 색상 상태를 별도로 관리  
+
+**배운 점**  
+터치 이벤트를 직접 다루며, 사용자의 입력이 즉시 반영되는 **직접 조작형 인터랙션**을 구현했습니다.
+**핵심 학습 포인트**  
+터치 입력을 실시간으로 처리하는 로우 레벨 인터랙션 구현 능력 향상.
+
+---
+
+## W06 ~ W07: 게임 로직 & 상태 결합
+## Week 06 ~ 07 · 게임 로직 & 상태 결합
+
+### 🫧 Bubble Game  
+<img width="354" height="636" alt="image" src="https://github.com/user-attachments/assets/63c40633-512f-47ca-83bd-5b734633ecb4" />
+<img width="354" height="636" src="https://github.com/user-attachments/assets/63c40633-512f-47ca-83bd-5b734633ecb4" />
+
+**구현 내용**  
+- 버블 객체를 데이터 클래스로 관리  
+**주요 구현 내용**  
+- 버블을 데이터 클래스로 정의하고 List<Bubble>로 상태 관리  
+- 터치 시 해당 버블을 제거하며 상태 갱신  
+
+**배운 점**  
+UI와 데이터 모델을 결합해 **상호작용 중심의 게임 로직**을 구현할 수 있었습니다.
+**핵심 학습 포인트**  
+UI와 데이터 모델을 결합하여, 사용자 입력에 따라 상태가 동적으로 변하는 게임 구조 구현.
+
+---
+
+### 🎯 Stopwatch Game  
+<img width="360" height="642" alt="image" src="https://github.com/user-attachments/assets/dc6ec1fe-9ab2-477d-b56e-c7c6981c5c08" />
+<img width="360" height="642" src="https://github.com/user-attachments/assets/dc6ec1fe-9ab2-477d-b56e-c7c6981c5c08" />
+
+**구현 내용**  
+**주요 구현 내용**  
+- 목표 시간과 실제 클릭 시간의 차이를 계산  
+- 오차에 따라 결과 메시지를 분기 처리  
+
+**배운 점**  
+여러 상태 변수를 동시에 관리하면서 조건에 따라 화면을 다르게 렌더링하는 방법을 배웠습니다.  
+Compose의 상태 관리 구조를 실감할 수 있는 실습이었습니다.
+**핵심 학습 포인트**  
+여러 상태 변수를 통합적으로 관리하며, 조건부 렌더링으로 실시간 반응형 UI 구현 능력 강화.
+
+---
+
+## 🧠 전체 소감
+
+Jetpack Compose를 처음 다루면서 기존 XML 방식과의 차이를 많이 느꼈습니다.  
+상태 기반 UI의 개념이 처음엔 낯설었지만, 점점 데이터와 화면이 자연스럽게 연결되는 구조가 익숙해졌습니다.  
+
+특히 `remember`, `mutableStateOf`, `LaunchedEffect`, `pointerInput` 등을 사용하면서  
+단순히 화면을 그리는 것이 아니라 **상태 변화에 반응하는 인터랙티브한 UI**를 만들 수 있게 되었습니다.  
+## 🧩 코드 예시
 
 ```kotlin
 @Composable
-fun SimpleGridApp() {
-    var isInteractionEnabled by remember { mutableStateOf(false) }
+fun CounterExample() {
+    var count by remember { mutableStateOf(0) }
 
     Column(
-        modifier = Modifier.fillMaxSize().padding(16.dp),
-        verticalArrangement = Arrangement.SpaceBetween
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
     ) {
-        Grid(isInteractionEnabled = isInteractionEnabled)
-
-        Button(
-            onClick = { isInteractionEnabled = !isInteractionEnabled },
-            colors = ButtonDefaults.buttonColors(
-                backgroundColor = if (isInteractionEnabled) Color.Red else Color.Green
-            ),
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Text(
-                text = if (isInteractionEnabled) "상호작용 종료 (Stop)" else "상호작용 시작 (Start)",
-                color = Color.White
-            )
+        Text(text = "$count", fontSize = 40.sp)
+        Spacer(modifier = Modifier.height(16.dp))
+        Button(onClick = { count++ }) {
+            Text("Add")
         }
     }
 }
 
+이번 실습을 통해 Compose의 핵심 철학인  
+**“상태와 UI가 함께 움직이는 선언형 프로그래밍”**의 장점을 확실히 체험했습니다.
 
-
----
-
-
-# 📱 Simple Grid  myapp에 대한 소개
-### Jetpack Compose 기반 상태 관리 실습 프로젝트
-
-Simple Grid는 Jetpack Compose 상태 관리와 반응형 UI 구조를 이해하기 위해 만든 실습 프로젝트다.  
-4x4 격자를 만들고 시작/종료 버튼 하나로 전체 상호작용을 제어하며 Compose의 효율적인 UI 관리를 체험할 수 있다.
-
----
-
-## 🧩 프로젝트 개요  
-
-앱의 중심은 상태(State)이며 UI는 그 상태를 반영한다는 Compose 철학을 코드로 체화하는 것이 목표다.
-
-핵심 포인트:  
-- 4x4 격자 구현 + 시작/종료 버튼으로 전체 UI 제어  
-- Compose 단방향 데이터 흐름(Unidirectional Data Flow) 실습  
-- 상태(State)를 중앙에서 관리해 코드 구조 단순화
-
----
-
-## ⚙️ 핵심 구현 포인트  
-
-### 1️⃣ 단일 상태로 전체 UI 통제  
-`isInteractionEnabled`라는 단일 `mutableStateOf` 변수로 전체 활성화 여부를 관리했다.  
-- 모든 셀 클릭 가능 여부를 이 변수로 제어  
-- 버튼은 상태에 따라 텍스트(Start ↔ Stop)와 색상(초록 ↔ 빨강) 동시에 변경
-
----
-
-### 2️⃣ 균일한 그리드 구성과 Modifier 안정성  
-- Column과 Row 계층 배치  
-- 각 셀에 `Modifier.weight(1f)` 적용으로 균등 비율 유지  
-- `GridCell`을 `RowScope` 확장 함수로 선언해 스코프 문제 해결
-
----
-
-### 3️⃣ UX 중심 설계  
-- 과도한 애니메이션 없이 안정성과 유지보수성 우선  
-- 상호작용 종료 시 `Modifier.alpha(0.5f)` 적용으로 비활성 상태 시각화  
-- 버튼 하나로 버튼 색상/텍스트와 16개 셀 클릭 가능 여부 동시에 제어
-
----
-
-## 💻 코드 스니펫
-
-```kotlin
-@Composable
-fun SimpleGridApp() {
-    var isInteractionEnabled by remember { mutableStateOf(false) }
-
-    Column(
-        modifier = Modifier.fillMaxSize().padding(16.dp),
-        verticalArrangement = Arrangement.SpaceBetween
-    ) {
-        Grid(isInteractionEnabled = isInteractionEnabled)
-
-        Button(
-            onClick = { isInteractionEnabled = !isInteractionEnabled },
-            colors = ButtonDefaults.buttonColors(
-                backgroundColor = if (isInteractionEnabled) Color.Red else Color.Green
-            ),
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Text(
-                text = if (isInteractionEnabled) "상호작용 종료 (Stop)" else "상호작용 시작 (Start)",
-                color = Color.White
-            )
-        }
-    }
-}
 
