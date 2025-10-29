@@ -2,8 +2,6 @@
 # 202511002 성민준
 
 
-# Jetpack Compose UI 실습
-### Android Studio · Kotlin · Jetpack Compose
 
 ---
 
@@ -18,17 +16,11 @@ Compose의 주요 기능들을 직접 구현하며 학습한 내용을 기록했
 
 
 # 📱 Jetpack Compose UI 실습
+### Android Studio · Kotlin · Jetpack Compose
 ### Android Studio를 활용한 UI 실습  (W03 ~ W07)
 
 ---
 
-## 🧭 Overview
-
-Jetpack Compose를 활용한 안드로이드 UI 실습 과정을 정리한 프로젝트입니다.  
-기본적인 레이아웃 구조부터 상태 관리, 비동기 처리, 터치 이벤트, 간단한 게임 로직까지  
-Compose의 주요 기능들을 직접 구현하며 학습한 내용을 기록했습니다.
-
----
 
 ## Week 03 · Compose 기본 구조 & 데이터 바인딩
 
