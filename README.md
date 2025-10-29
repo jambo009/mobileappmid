@@ -2,125 +2,158 @@
 성민준
 
 
+# 📱 Jetpack Compose UI 실습 리포트
+### Android Studio를 활용한 UI 실습 정리 (W03 ~ W07)
 
+---
 
-모바일앱 여태까지 한 실습
+## W03: Compose 기본 구조 & 데이터 바인딩 이해
 
-W03: Compose의 기본 구조 및 데이터 바인딩 
-
-
-🧩 W03: Compose의 기본 구조 및 데이터 바인딩
-☕ ComposeCoffee
+### ☕ ComposeCoffee  
 <img width="362" height="648" alt="image" src="https://github.com/user-attachments/assets/ccfde846-bd69-400a-b263-60e1fff26cd4" />
 
-구현 내용
+**구현 내용**  
+- `Column`, `Row`, `Spacer`를 이용해 UI 요소를 세로와 가로로 정렬  
+- `Modifier.padding()`을 사용해 일정한 여백 적용  
+- `Button`의 `onClick`을 준비하여 클릭 이벤트 구조 설계  
 
-Column, Row, Spacer를 활용하여 UI 요소를 세밀하게 정렬
+**배운 점**  
+기본적인 레이아웃 구성 방법과 Modifier를 활용한 간격 조정 방법을 익혔습니다.  
+Compose의 기본 레이아웃 원리를 이해하는 데 도움이 되었습니다.
 
-Modifier.padding을 통해 디자인 시스템 기반의 간격(Spacing) 설정
+---
 
-Button Composable의 onClick 핸들러를 준비하여 이벤트 처리 구조 설계
-
-성과 및 학습 포인트
-
-기본 레이아웃 컴포저블(Column, Row 등)을 자유자재로 조합하고, Modifier를 통해 일관된 UI 구조를 구성하는 능력을 확보했습니다.
-
-W03kakaoemail
-
-
-
+### 💌 KakaoEmail  
 <img width="354" height="639" alt="image" src="https://github.com/user-attachments/assets/8ece48ea-1cac-416e-a660-60e89ed04630" />
 
-"TextField 또는 **OutlinedTextField**를 사용하여 사용자 입력 필드를 구현했습니다. 핵심은 **remember { mutableStateOf("""") }**를 사용한 상태 변수(State Variable) 선언입니다. 사용자가 텍스트를 입력할 때마다 상태가 갱신되고, UI는 이 상태를 **반영(Observe)**하여 변경됩니다.",Jetpack Compose의 가장 중요한 원리인 '상태 기반 UI 갱신' 메커니즘을 실제 입력 컴포넌트에 적용했습니다.
+**구현 내용**  
+- `OutlinedTextField`를 이용한 사용자 입력 필드 구현  
+- `remember { mutableStateOf("") }`로 입력 상태를 관리  
+- 입력 시 상태가 자동 갱신되어 UI에 즉시 반영  
 
+**배운 점**  
+Jetpack Compose의 핵심 개념인 **상태 기반 UI 갱신(State-driven UI)** 구조를 이해했습니다.  
+데이터 상태가 바뀌면 자동으로 화면이 변경되는 선언형 방식에 익숙해졌습니다.
 
-W04: 복잡한 레이아웃 설계 및 컴포넌트 모듈화
+---
 
+## W04: 복잡한 레이아웃 설계 & 구성
 
-W04grid
-
-
+### 🖼️ Grid Layout  
 <img width="358" height="652" alt="image" src="https://github.com/user-attachments/assets/4c36d6d7-9dc6-461b-b4cc-e7c0a1599cb4" />
 <img width="352" height="635" alt="image" src="https://github.com/user-attachments/assets/d53dec53-4864-4d0d-9695-7b8513f3aef6" />
 
+**구현 내용**  
+- `LazyVerticalGrid`를 사용하여 여러 이미지를 스크롤 가능한 형태로 표시  
+- Lazy Composable을 통해 보이는 영역만 렌더링되어 성능 최적화  
 
-LazyVerticalGrid (또는 LazyColumn과 Row 조합)을 사용하여 수백 개의 이미지를 효율적으로 표시하는 스크롤 가능 뷰를 구현했습니다. Lazy 접두사가 붙은 Composables은 화면에 보이는 요소만 렌더링하여 앱의 메모리 사용량과 성능을 최적화하는 데 필수적인 기술입니다.	대규모 데이터 셋을 다루는 데 필요한 성능 최적화 레이아웃(Lazy Composables)의 사용법을 완벽히 숙지했습니다.
+**배운 점**  
+대량의 데이터를 효율적으로 처리할 수 있는 **Lazy 로딩 방식**의 원리를 이해했습니다.
 
+---
 
-W04keypad
-
-
-
+### 🔢 Keypad Layout  
 <img width="357" height="648" alt="image" src="https://github.com/user-attachments/assets/133506f3-0d6f-491f-b836-ad4eb07d6a35" />
 
-키패드 버튼들을 Row와 Column의 계층 구조로 배치하고, **Modifier.weight(float)**를 사용하여 각 버튼이 가로 공간을 균등하게 차지하도록 비례 배분했습니다. 이는 다양한 해상도의 기기에서 일관된 비율의 UI를 제공하는 반응형 디자인의 핵심입니다.	Modifier.weight를 통한 유연한 레이아웃(Flexible Layout) 설계를 통해 다차원 배열 형태의 UI를 정확하게 구현했습니다.
+**구현 내용**  
+- Row와 Column을 조합하여 키패드 구조 생성  
+- `Modifier.weight()`로 각 버튼이 동일한 비율을 차지하도록 설정  
 
-W04overalpped
+**배운 점**  
+다양한 해상도의 기기에서도 일관된 비율로 보이는 **반응형 UI 설계** 방법을 익혔습니다.
 
+---
 
-
+### 🎨 Overlapped Layout  
 <img width="355" height="640" alt="image" src="https://github.com/user-attachments/assets/682b7663-feea-4868-b243-20a08cb0c7d1" />
 
-Box Composable을 사용하여 여러 UI 요소(예: Image)를 Z축(깊이) 방향으로 겹쳐 보이도록 구현했습니다. 개별 요소의 위치는 **Modifier.offset(dp)**를 사용하여 세밀하게 조정하여 시각적인 깊이감을 연출했습니다.**Box 레이아웃과 Modifier.offset**을 활용하여 겹침, 배경/전경 배치 등 2.5D 레이아웃 효과를 생성했습니다.
+**구현 내용**  
+- `Box`를 사용해 UI 요소를 겹쳐 배치  
+- `Modifier.offset()`으로 개별 요소의 위치를 세밀하게 조정  
 
-W04profile
+**배운 점**  
+겹치는 UI 구성과 z축 개념을 이해하고, 입체적인 화면 구성을 구현할 수 있었습니다.
 
+---
 
+## W05: 상태 관리 & 실시간 상호작용
 
-<img width="357" height="82" alt="image" src="https://github.com/user-attachments/assets/ec0f374d-f26a-4fda-a63b-1a0c92d2eceb" />
-
-
-
-W05: 상태 관리 및 실시간 상호 작용
-
-
-
-W05counter
-
-
-
+### 🔢 Counter  
 <img width="356" height="641" alt="image" src="https://github.com/user-attachments/assets/0098a337-766b-4a57-8f8b-34f9883a23dd" />
 
-**mutableStateOf**를 활용하여 카운터 값을 상태로 정의하고, 버튼 클릭 이벤트 발생 시 상태 변경을 통해 UI(화면의 숫자)가 즉각적으로 갱신되는 단방향 데이터 흐름(Unidirectional Data Flow) 원리를 구현했습니다.	remember와 mutableStateOf를 사용하여 Composable의 수명 주기(Lifecycle) 동안 상태를 유지하고, 상태 변화에 반응하는 반응형 프로그래밍의 기본을 완성했습니다.
+**구현 내용**  
+- `mutableStateOf`로 카운터 값을 상태로 관리  
+- 버튼 클릭 시 상태가 변경되며 UI가 자동 갱신  
 
-W05stopwatch
+**배운 점**  
+Compose의 **단방향 데이터 흐름(Unidirectional Data Flow)** 개념을 이해했습니다.  
+상태 변화가 UI에 직접 반영되는 구조를 체험했습니다.
 
+---
 
+### ⏱️ Stopwatch  
 <img width="360" height="640" alt="image" src="https://github.com/user-attachments/assets/97e5e0cc-dd88-45c2-99ad-5a386964b662" />
 
-Kotlin Coroutines의 **LaunchedEffect**와 delay 함수를 사용하여 메인 UI 스레드를 막지 않는 비동기 타이머 로직을 구현했습니다. isRunning: Boolean 상태를 추가하여 스톱워치의 시작/정지 상태를 제어하는 복잡한 비동기 상태 관리를 수행했습니다.	코루틴을 활용한 비동기 프로그래밍 능력을 입증했으며, 앱의 **응답성(Responsiveness)**을 해치지 않는 타이머/애니메이션 구현 기법을 습득했습니다.
+**구현 내용**  
+- `LaunchedEffect`와 `delay()`를 활용한 비동기 타이머 구현  
+- `isRunning` 상태로 시작/정지 제어  
 
-W05touch
+**배운 점**  
+Coroutine을 이용한 비동기 로직을 Compose에 적용해, UI를 멈추지 않고 동작하도록 구현했습니다.
 
+---
 
+### ✋ Touch & Draw  
 <img width="357" height="640" alt="image" src="https://github.com/user-attachments/assets/f3fbb693-c6f4-406a-94e2-0b4933a76684" />
 <img width="359" height="646" alt="image" src="https://github.com/user-attachments/assets/afce3bd3-ab56-462a-81ac-1542595e08a1" />
 
-**Modifier.pointerInput**을 사용하여 화면의 **터치 제스처(Drag, Tap)**를 감지하고, 해당 터치 좌표를 실시간으로 추적하여 Canvas Composable에 선(Line)을 그리는 로직을 구현했습니다. 색상 피커 버튼은 별도의 상태 변수로 현재 선택된 색상을 관리했습니다.로우 레벨(Low-level) 터치 이벤트를 처리하는 pointerInput API를 사용하여 직관적인 사용자 상호 작용(Direct Manipulation) 기능을 성공적으로 구현했습니다.
+**구현 내용**  
+- `Modifier.pointerInput`으로 터치 이벤트 감지  
+- Canvas를 이용해 드래그 경로를 실시간으로 그림  
+- 색상 선택 상태를 별도 변수로 관리  
 
-W06 & W07: 게임 로직 및 애니메이션 결합
+**배운 점**  
+터치 이벤트를 직접 다루며, 사용자의 입력이 즉시 반영되는 **직접 조작형 인터랙션**을 구현했습니다.
 
+---
 
-W06bubblegame
+## W06 ~ W07: 게임 로직 & 상태 결합
 
-
+### 🫧 Bubble Game  
 <img width="354" height="636" alt="image" src="https://github.com/user-attachments/assets/63c40633-512f-47ca-83bd-5b734633ecb4" />
 
-게임 플레이에 필요한 객체(버블) 모델을 정의하고, List<Bubble> 형태로 관리했습니다. 랜덤 함수를 사용하여 버블의 생성 위치와 속성을 결정하고, 터치 시 해당 버블 객체를 목록에서 **제거(Remove)**하는 방식으로 **게임 상태(Game State)**를 업데이트했습니다.	클래스/데이터 모델을 Composable의 상태와 결합하여 단순한 게임 루프를 구현하고, 사용자 입력에 따른 상태 변화를 명확하게 처리했습니다.
+**구현 내용**  
+- 버블 객체를 데이터 클래스로 관리  
+- 터치 시 해당 버블을 제거하며 상태 갱신  
 
-W07stopwatchgame
+**배운 점**  
+UI와 데이터 모델을 결합해 **상호작용 중심의 게임 로직**을 구현할 수 있었습니다.
 
+---
 
+### 🎯 Stopwatch Game  
 <img width="360" height="642" alt="image" src="https://github.com/user-attachments/assets/dc6ec1fe-9ab2-477d-b56e-c7c6981c5c08" />
 
+**구현 내용**  
+- 목표 시간과 실제 클릭 시간의 차이를 계산  
+- 오차에 따라 결과 메시지를 분기 처리  
 
-W05의 스톱워치 로직을 확장하여 게임 시간 제한 및 목표 값을 설정했습니다. 게임 종료 시, 사용자가 버튼을 누른 시점과 목표 시간 간의 **시간 차이(오차)**를 계산하고, 이 오차 값에 따라 **게임 결과(Score/Message)**를 분기 처리하는 조건부 렌더링을 구현했습니다.여러 상태 변수(타이머, 목표 시간, 게임 상태)를 동시에 관리하고, 복잡한 로직의 결과를 UI에 실시간으로 반영하는 고급 상태 패턴을 성공적으로 적용했습니다.
+**배운 점**  
+여러 상태 변수를 동시에 관리하면서 조건에 따라 화면을 다르게 렌더링하는 방법을 배웠습니다.  
+Compose의 상태 관리 구조를 실감할 수 있는 실습이었습니다.
 
+---
 
+## 🧠 전체 소감
 
+Jetpack Compose를 처음 다루면서 기존 XML 방식과의 차이를 많이 느꼈습니다.  
+상태 기반 UI의 개념이 처음엔 낯설었지만, 점점 데이터와 화면이 자연스럽게 연결되는 구조가 익숙해졌습니다.  
 
+특히 `remember`, `mutableStateOf`, `LaunchedEffect`, `pointerInput` 등을 사용하면서  
+단순히 화면을 그리는 것이 아니라 **상태 변화에 반응하는 인터랙티브한 UI**를 만들 수 있게 되었습니다.  
 
-
+이번 실습을 통해 Compose의 핵심 철학인  
+**“상태와 UI가 함께 움직이는 선언형 프로그래밍”**의 장점을 확실히 체험했습니다.
 
 
 
