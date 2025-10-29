@@ -66,7 +66,7 @@ fun KakaoEmailScreen() {
         )
 
         Text(
-            text = "kkang104@gmail.com",
+            text = "jambo@gmail.com",
             color = Color(0xFFCFCFCE),
             modifier = Modifier
                 .padding(top = 10.dp)

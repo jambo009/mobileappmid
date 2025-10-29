@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ComposeLabTheme {
-                ProfileCard(msg = Message("홍길동", "Android 개발자"))
+                ProfileCard(msg = Message("성민준", "Android 개발중"))
             }
         }
     }
@@ -41,8 +41,8 @@ fun ProfileCard(msg: Message) {
         modifier = Modifier.padding(all = 8.dp)
     ) {
         Image(
-            painter = painterResource(R.drawable.profile_picture),
-            contentDescription = "연락처 프로필 사진",
+            painter = painterResource(R.drawable.git),
+            contentDescription = "아무 사진",
             modifier = Modifier
                 .size(40.dp)
                 .clip(CircleShape)

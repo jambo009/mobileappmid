@@ -41,8 +41,8 @@ fun NinjaBadgeExample() {
         .padding(16.dp)) {
 
         Image(
-            painter = painterResource(id = R.drawable.ninja),
-            contentDescription = "Ninja Image",
+            painter = painterResource(id = R.drawable.chimp),
+            contentDescription = "Chimp Image",
             modifier = Modifier
                 .fillMaxWidth(),
             contentScale = ContentScale.Crop
