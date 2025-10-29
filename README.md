@@ -1,8 +1,8 @@
-모바일앱실습 202511002 
-성민준
+#모바일앱실습 202511002 
+#성민준
 
 
-# Jetpack Compose UI Practice Report  
+# Jetpack Compose UI 실습
 ### Android Studio · Kotlin · Jetpack Compose
 
 ---
