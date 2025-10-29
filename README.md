@@ -1,7 +1,7 @@
 모바일앱실습 202511002 
 성민준
 
-myapp(자기앱)에대한소개
+myapp(자신만의 앱)에대한소개
 
 Simple Grid: Jetpack Compose 기반 상태 관리 실습 
 
