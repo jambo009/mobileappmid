@@ -55,11 +55,11 @@ W04overalpped
 
 W04profile
 
-👤 재사용 가능한 컴포넌트: Card 또는 Surface 내에 Row와 Column을 조합하여 명함 형태의 작은 커스터마이징된 Composable을 생성했습니다. 이는 앱 전체에서 동일한 UI 패턴을 재사용하는 데 유용합니다.
+
 
 <img width="357" height="82" alt="image" src="https://github.com/user-attachments/assets/ec0f374d-f26a-4fda-a63b-1a0c92d2eceb" />
 
-
+👤 재사용 가능한 컴포넌트: Card 또는 Surface 내에 Row와 Column을 조합하여 명함 형태의 작은 커스터마이징된 Composable을 생성했습니다. 이는 앱 전체에서 동일한 UI 패턴을 재사용하는 데 유용합니다.
 
 W05: 고급 상태 관리 및 상호 작용
 
