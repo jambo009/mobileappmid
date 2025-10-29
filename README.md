@@ -1,7 +1,98 @@
 모바일앱실습 202511002 
 성민준
 
-myapp(자기앱)에대한소개
+
+
+
+모바일앱 여태까지 한 실습
+
+W03
+
+
+
+<img width="362" height="648" alt="image" src="https://github.com/user-attachments/assets/ccfde846-bd69-400a-b263-60e1fff26cd4" />
+
+
+
+W03kakaoemail
+
+
+
+<img width="354" height="639" alt="image" src="https://github.com/user-attachments/assets/8ece48ea-1cac-416e-a660-60e89ed04630" />
+
+
+
+W04grid
+
+
+
+<img width="358" height="652" alt="image" src="https://github.com/user-attachments/assets/4c36d6d7-9dc6-461b-b4cc-e7c0a1599cb4" />
+
+
+
+<img width="352" height="635" alt="image" src="https://github.com/user-attachments/assets/d53dec53-4864-4d0d-9695-7b8513f3aef6" />
+
+W04keypad
+
+
+
+<img width="357" height="648" alt="image" src="https://github.com/user-attachments/assets/133506f3-0d6f-491f-b836-ad4eb07d6a35" />
+
+
+
+W04overalpped
+
+
+
+<img width="355" height="640" alt="image" src="https://github.com/user-attachments/assets/682b7663-feea-4868-b243-20a08cb0c7d1" />
+
+
+
+
+W04profile
+
+
+
+<img width="357" height="82" alt="image" src="https://github.com/user-attachments/assets/ec0f374d-f26a-4fda-a63b-1a0c92d2eceb" />
+
+
+W05counter
+
+
+
+<img width="356" height="641" alt="image" src="https://github.com/user-attachments/assets/0098a337-766b-4a57-8f8b-34f9883a23dd" />
+
+
+
+W05stopwatch
+
+
+<img width="360" height="640" alt="image" src="https://github.com/user-attachments/assets/97e5e0cc-dd88-45c2-99ad-5a386964b662" />
+
+
+
+W05touch
+
+
+<img width="357" height="640" alt="image" src="https://github.com/user-attachments/assets/f3fbb693-c6f4-406a-94e2-0b4933a76684" />
+<img width="359" height="646" alt="image" src="https://github.com/user-attachments/assets/afce3bd3-ab56-462a-81ac-1542595e08a1" />
+
+
+W06bubblegame
+
+
+
+<img width="354" height="636" alt="image" src="https://github.com/user-attachments/assets/63c40633-512f-47ca-83bd-5b734633ecb4" />
+
+
+W07stopwatchgame
+
+
+<img width="360" height="642" alt="image" src="https://github.com/user-attachments/assets/dc6ec1fe-9ab2-477d-b56e-c7c6981c5c08" />
+
+
+
+myapp(자신만의 앱)에대한소개
 
 Simple Grid: Jetpack Compose 기반 상태 관리 실습 
 
@@ -56,4 +147,3 @@ UI 화면 이미지
 하단 버튼: 빨간색(AccentColor)으로 '상호작용 종료 (Stop)' 텍스트가 표시됩니다.
 
 <img width="389" height="665" alt="image" src="https://github.com/user-attachments/assets/9d1990dc-4e7b-4d38-a42a-46970e365e7d" />
-
