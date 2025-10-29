@@ -181,25 +181,6 @@ Jetpack Compose를 처음 다루면서 기존 XML 방식과의 차이를 많이 
 
 특히 `remember`, `mutableStateOf`, `LaunchedEffect`, `pointerInput` 등을 사용하면서  
 단순히 화면을 그리는 것이 아니라 **상태 변화에 반응하는 인터랙티브한 UI**를 만들 수 있게 되었습니다.  
-## 🧩 코드 예시
-
-```kotlin
-@Composable
-fun CounterExample() {
-    var count by remember { mutableStateOf(0) }
-
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
-        Text(text = "$count", fontSize = 40.sp)
-        Spacer(modifier = Modifier.height(16.dp))
-        Button(onClick = { count++ }) {
-            Text("Add")
-        }
-    }
-}
 
 이번 실습을 통해 Compose의 핵심 철학인  
 **“상태와 UI가 함께 움직이는 선언형 프로그래밍”**의 장점을 확실히 체험했습니다.
