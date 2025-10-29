@@ -22,7 +22,6 @@ Compose의 주요 기능들을 직접 구현하며 학습한 내용을 기록했
 
 ---
 
-## W03: Compose 기본 구조 & 데이터 바인딩 이해
 ## 🧭 Overview
 
 Jetpack Compose를 활용한 안드로이드 UI 실습 과정을 정리한 프로젝트입니다.  
