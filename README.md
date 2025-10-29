@@ -6,7 +6,7 @@
 
 모바일앱 여태까지 한 실습
 
-W03: 기본 레이아웃 및 데이터 바인딩 
+W03: Compose의 기본 구조 및 데이터 바인딩 
 
 
 W03composecoffee
@@ -29,7 +29,7 @@ W03kakaoemail
 "TextField 또는 **OutlinedTextField**를 사용하여 사용자 입력 필드를 구현했습니다. 핵심은 **remember { mutableStateOf("""") }**를 사용한 상태 변수(State Variable) 선언입니다. 사용자가 텍스트를 입력할 때마다 상태가 갱신되고, UI는 이 상태를 **반영(Observe)**하여 변경됩니다.",Jetpack Compose의 가장 중요한 원리인 '상태 기반 UI 갱신' 메커니즘을 실제 입력 컴포넌트에 적용했습니다.
 
 
-W04: 복합 레이아웃 구성 및 커스터마이징
+W04: 복잡한 레이아웃 설계 및 컴포넌트 모듈화
 
 
 W04grid
@@ -39,7 +39,7 @@ W04grid
 <img width="352" height="635" alt="image" src="https://github.com/user-attachments/assets/d53dec53-4864-4d0d-9695-7b8513f3aef6" />
 
 
-LazyVerticalGrid (또는 LazyColumn과 Row 조합)을 사용하여 수백 개의 이미지를 효율적으로 표시하는 스크롤 가능 뷰를 구현했습니다. Lazy 접두사가 붙은 Composables은 화면에 보이는 요소만 렌더링하여 앱의 메모리 사용량과 성능을 최적화하는 데 필수적인 기술입니다.	대규모 데이터 셋을 다루는 데 필요한 성능 최적화 레이아웃(Lazy Composables)의 사용법을 완벽히 숙지했습니다.\
+LazyVerticalGrid (또는 LazyColumn과 Row 조합)을 사용하여 수백 개의 이미지를 효율적으로 표시하는 스크롤 가능 뷰를 구현했습니다. Lazy 접두사가 붙은 Composables은 화면에 보이는 요소만 렌더링하여 앱의 메모리 사용량과 성능을 최적화하는 데 필수적인 기술입니다.	대규모 데이터 셋을 다루는 데 필요한 성능 최적화 레이아웃(Lazy Composables)의 사용법을 완벽히 숙지했습니다.
 
 
 W04keypad
@@ -66,7 +66,7 @@ W04profile
 
 
 
-W05: 고급 상태 관리 및 상호 작용
+W05: 상태 관리 및 실시간 상호 작용
 
 
 
@@ -93,7 +93,7 @@ W05touch
 
 **Modifier.pointerInput**을 사용하여 화면의 **터치 제스처(Drag, Tap)**를 감지하고, 해당 터치 좌표를 실시간으로 추적하여 Canvas Composable에 선(Line)을 그리는 로직을 구현했습니다. 색상 피커 버튼은 별도의 상태 변수로 현재 선택된 색상을 관리했습니다.로우 레벨(Low-level) 터치 이벤트를 처리하는 pointerInput API를 사용하여 직관적인 사용자 상호 작용(Direct Manipulation) 기능을 성공적으로 구현했습니다.
 
-W06 & W07: 애니메이션 및 게임 로직 구현
+W06 & W07: 게임 로직 및 애니메이션 결합
 
 
 W06bubblegame
