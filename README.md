@@ -94,6 +94,11 @@ Z축 개념을 활용한 겹침 효과와 입체적인 UI 구성 방식 습득.
 
 ---
 
+### 🖼️ Profile Layout
+<img width="357" height="82" alt="image" src="https://github.com/user-attachments/assets/ec0f374d-f26a-4fda-a63b-1a0c92d2eceb" />
+
+
+
 ## W05: 상태 관리 & 실시간 상호작용
 
 ### 🔢 Counter  
