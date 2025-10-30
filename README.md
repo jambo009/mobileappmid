@@ -97,6 +97,15 @@ Z축 개념을 활용한 겹침 효과와 입체적인 UI 구성 방식 습득.
 ### 🖼️ Profile Layout
 <img width="357" height="82" alt="image" src="https://github.com/user-attachments/assets/ec0f374d-f26a-4fda-a63b-1a0c92d2eceb" />
 
+**주요 구현 내용** 
+-Jetpack Compose에서 컴포넌트들을 겹치게 배치하기 위해 Box 컴포저블을 사용
+-요소의 세부 위치 조정
+
+
+**핵심 학습 포인트**
+Z축 개념을 활용한 겹침 효과와 입체적인 UI 구성 방식 습득.
+
+---
 
 
 ## W05: 상태 관리 & 실시간 상호작용
